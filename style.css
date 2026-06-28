@@ -208,3 +208,8 @@ body {
     color: #ff9e64;
   }
 
+/* Popüler Klan Renkleri */
+.clan-row.altin { border-right: 4px solid #FFD700; }
+.clan-row.gumus { border-right: 4px solid #C0C0C0; }
+.clan-row.bronz { border-right: 4px solid #CD7F32; }
+.clan-row.cks-ozel { border-right: 4px solid #FFFF00; } /* Sarı CKS çerçevesi */
