@@ -8,15 +8,32 @@
 </head>
 <body>
 
-    <!-- Üst Başlık Banner -->
+    <div id="ayarlar-modal" class="modal">
+        <div class="modal-icerik">
+            <div class="modal-baslik">
+                <h2>⚙️ Ayarlar</h2>
+                <span class="kapat-btn" onclick="ayarlariKapat()">&times;</span>
+            </div>
+            <hr class="modal-cizgi">
+            <div class="ayar-satir">
+                <span>Karanlık Mod</span>
+                <label class="switch">
+                    <input type="checkbox" id="tema-switch" checked onchange="temaDegistir()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
     <div class="main-header">
+        <button class="settings-btn" onclick="ayarlariAc()">⚙️</button>
+        
         <h1>🐔 CHICKEN GUN</h1>
         <p>Klan ve Sunucu Takip Merkezi</p>
     </div>
 
     <div class="content-container">
         
-        <!-- FOTOĞRAFIN YOLUNU BURAYA YAPIŞTIR -->
         <div class="map-image-container">
             <img src="Harita.jpg" alt="Chicken Gun Klan Haritası" class="clan-map-img">
         </div>
@@ -37,12 +54,41 @@
             </div>
         </div>
 
-
-        <!-- GÜNCEL KLANLAR BÖLÜMÜ -->
         <h2 class="section-title" id="klanlar-bolumu">⚔️ Güncel Klanlar</h2>
         
         <div class="clan-list">
-            <!-- wtt -->
+            <div class="clan-row">
+                <div class="clan-info">
+                    <span class="clan-name">KSM</span>
+                    <div class="tag-group">
+                        <span class="tag tag-guclu">Güçlü</span>
+                        <span class="tag tag-savas">Savaş</span>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="klanaKatil('KSM')">Katıl</button>
+            </div>
+
+            <div class="clan-row">
+                <div class="clan-info">
+                    <span class="clan-name">XHAN</span>
+                    <div class="tag-group">
+                        <span class="tag tag-guclu">Güçlü</span>
+                        <span class="tag tag-savas">Savaş</span>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="klanaKatil('XHAN')">Katıl</button>
+            </div>
+
+            <div class="clan-row">
+                <div class="clan-info">
+                    <span class="clan-name">KONSEY</span>
+                    <div class="tag-group">
+                        <span class="tag tag-guclu">Güçlü</span>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="klanaKatil('KONSEY')">Katıl</button>
+            </div>
+
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">wtt</span>
@@ -55,7 +101,6 @@
                 <button class="action-btn" onclick="klanaKatil('wtt')">Katıl</button>
             </div>
 
-            <!-- BM -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">BM</span>
@@ -64,7 +109,6 @@
                 <button class="action-btn" onclick="klanaKatil('BM')">Katıl</button>
             </div>
 
-            <!-- KHC -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">KHC</span>
@@ -73,7 +117,6 @@
                 <button class="action-btn" onclick="klanaKatil('KHC')">Katıl</button>
             </div>
 
-            <!-- MRX -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">MRX</span>
@@ -82,7 +125,6 @@
                 <button class="action-btn" onclick="klanaKatil('MRX')">Katıl</button>
             </div>
 
-            <!-- MGD -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">MGD</span>
@@ -91,7 +133,6 @@
                 <button class="action-btn" onclick="klanaKatil('MGD')">Katıl</button>
             </div>
 
-            <!-- PKB -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">PKB</span>
@@ -100,7 +141,6 @@
                 <button class="action-btn" onclick="klanaKatil('PKB')">Katıl</button>
             </div>
 
-            <!-- SGM -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">SGM</span>
@@ -109,7 +149,6 @@
                 <button class="action-btn" onclick="klanaKatil('SGM')">Katıl</button>
             </div>
 
-            <!-- TMV -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">TMV</span>
@@ -118,7 +157,6 @@
                 <button class="action-btn" onclick="klanaKatil('TMV')">Katıl</button>
             </div>
 
-            <!-- HM -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">HM</span>
@@ -127,7 +165,6 @@
                 <button class="action-btn" onclick="klanaKatil('HM')">Katıl</button>
             </div>
 
-            <!-- TGA -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">TGA</span>
@@ -136,7 +173,6 @@
                 <button class="action-btn" onclick="klanaKatil('TGA')">Katıl</button>
             </div>
 
-            <!-- vsl -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">vsl</span>
@@ -145,7 +181,6 @@
                 <button class="action-btn" onclick="klanaKatil('vsl')">Katıl</button>
             </div>
 
-            <!-- BSK -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">BSK</span>
@@ -154,7 +189,6 @@
                 <button class="action-btn" onclick="klanaKatil('BSK')">Katıl</button>
             </div>
 
-            <!-- TSS -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">TSS</span>
@@ -163,7 +197,6 @@
                 <button class="action-btn" onclick="klanaKatil('TSS')">Katıl</button>
             </div>
 
-            <!-- CRZ -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">CRZ</span>
@@ -172,7 +205,6 @@
                 <button class="action-btn" onclick="klanaKatil('CRZ')">Katıl</button>
             </div>
 
-            <!-- GMR -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">GMR</span>
@@ -181,7 +213,6 @@
                 <button class="action-btn" onclick="klanaKatil('GMR')">Katıl</button>
             </div>
 
-            <!-- SBK -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">SBK</span>
@@ -190,7 +221,6 @@
                 <button class="action-btn" onclick="klanaKatil('SBK')">Katıl</button>
             </div>
 
-            <!-- AVG -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">AVG</span>
@@ -199,7 +229,6 @@
                 <button class="action-btn" onclick="klanaKatil('AVG')">Katıl</button>
             </div>
 
-            <!-- KP -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">KP</span>
@@ -208,7 +237,6 @@
                 <button class="action-btn" onclick="klanaKatil('KP')">Katıl</button>
             </div>
 
-            <!-- DSF -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">DSF</span>
@@ -217,7 +245,6 @@
                 <button class="action-btn" onclick="klanaKatil('DSF')">Katıl</button>
             </div>
 
-            <!-- CKS -->
             <div class="clan-row">
                 <div class="clan-info">
                     <span class="clan-name">CKS</span>
@@ -227,8 +254,6 @@
             </div>
         </div>
 
-
-        <!-- YIKILAN KLANLAR BÖLÜMÜ -->
         <h2 class="section-title">🪦 Tarihe Karışanlar</h2>
         
         <div class="clan-list row-disabled">
@@ -242,8 +267,6 @@
             <div class="clan-row yikik"><span class="clan-name">TVP</span><span class="status-text">YIKILDI</span></div>
         </div>
 
-
-        <!-- AKTİF SUNUCULAR BÖLÜMÜ -->
         <h2 class="section-title" id="sunucular-bolumu">🌐 Aktif Sunucular</h2>
         
         <div class="server-card">
@@ -264,15 +287,12 @@
 
     </div>
 
-    <!-- Alt Gezinme Menüsü -->
-        <div class="bottom-navigation">
+    <div class="bottom-navigation">
         <div class="nav-button" onclick="sayfaKaydir('populerler-bolumu')">⭐ Popülerler</div>
         <div class="nav-button" onclick="sayfaKaydir('klanlar-bolumu')">⚔️ Klanlar</div>
         <div class="nav-button" onclick="sayfaKaydir('sunucular-bolumu')">🌐 Sunucular</div>
     </div>
 
-
     <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>

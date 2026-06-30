@@ -13,16 +13,16 @@ function sayfaKaydir(elementId) {
 
 // --- CANLI SUNUCU SAYAÇLARI ---
 
-// 1. Sunucu: türk gel (Rastgele Oyuncu Değişimi)
+// 1. Sunucu: türk gel
 setInterval(function() {
     var sayac1 = document.getElementById('sayac-turkgel');
     if (sayac1) {
-        var rastgeleOyuncu = Math.floor(Math.random() * 16) + 3; // 3 ile 18 arası sayı üretir
+        var rastgeleOyuncu = Math.floor(Math.random() * 16) + 3;
         sayac1.innerText = rastgeleOyuncu + "/20";
     }
-}, 4000); // Her 4 saniyede bir güncellenir
+}, 4000);
 
-// 2. Sunucu: türkiye (Aşama Aşama Dolan Sunucu)
+// 2. Sunucu: türkiye
 var saniye = 0;
 setInterval(function() {
     var sayac2 = document.getElementById('sayac-turkiye');
@@ -34,10 +34,38 @@ setInterval(function() {
         sayac2.innerText = "17/20";
     } else if (saniye === 10) {
         sayac2.innerText = "20/20";
-        sayac2.classList.add("dolu"); // Rengi kırmızıya döner
+        sayac2.classList.add("dolu");
     } else if (saniye === 15) {
         sayac2.innerText = "12/20";
-        sayac2.classList.remove("dolu"); // Rengi tekrar yeşile döner
-        saniye = 0; // Döngüyü sıfırla
+        sayac2.classList.remove("dolu");
+        saniye = 0;
     }
-}, 1000); // Her saniye kontrol eder
+}, 1000);
+
+// --- AYARLAR MODAL (AÇILIR PENCERE) FONKSİYONLARI ---
+
+function ayarlariAc() {
+    document.getElementById('ayarlar-modal').style.display = "block";
+}
+
+function ayarlariKapat() {
+    document.getElementById('ayarlar-modal').style.display = "none";
+}
+
+// Pencere dışına tıklanınca kapatma
+window.onclick = function(event) {
+    var modal = document.getElementById('ayarlar-modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Tema Değiştirme (Karanlık / Aydınlık Mod)
+function temaDegistir() {
+    var switchButon = document.getElementById('tema-switch');
+    if (!switchButon.checked) {
+        document.body.classList.add('light-theme'); // Beyaz mod aktif
+    } else {
+        document.body.classList.remove('light-theme'); // Karanlık mod aktif
+    }
+}
